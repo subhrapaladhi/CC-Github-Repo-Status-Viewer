@@ -1,6 +1,6 @@
 # CodeChef-Github-Repo-Status-Viewer
 
-A webapp to help in monitoring the repositories in the organization. Easily view top reposotories, top contiributors and details about the committs done in that repository
+A webapp to help in monitoring the repositories in the organization. Easily view top reposotories, top contiributors and details about the committs done in any repository
 
 ### Frameworks, libraries and programmig language
 * node js
