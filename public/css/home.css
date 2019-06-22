@@ -1,0 +1,107 @@
+.container{
+    border: 0.5px solid black;
+    margin: 5% auto;
+    height: 50%;
+    width: 90%;
+}
+.container div{
+    width: 31%;
+    margin: 1%;
+    height: 94%;
+    list-style: none;
+}
+
+
+.topRepos{
+    border: 0.5px solid red;
+    float: left;
+}
+.topRepos h2{
+    text-align: center;
+}
+.topRepos table{
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+   
+.topRepos td,
+.topRepos th{
+    border: 2px solid rgb(0, 255, 64);
+    padding: 2%;
+}
+
+.topRepos th{
+    text-align: center;
+}
+
+.topRepos td:nth-last-of-type(even){
+    text-align: left;
+}
+.topRepos td:nth-last-of-type(odd){
+       text-align: right;
+}
+
+
+.searchBar{
+    border: 0.5px solid yellowgreen;
+    float: left;
+}
+.searchBar div{
+    width: 90%;
+    box-sizing: border-box;
+    padding: 1%;
+    margin: 35% auto;
+}
+.searchBar input{
+    width: 70%;
+    height: 25px;
+    border-radius: 15px;
+    border: 2px solid black;
+    padding: 2%;
+}
+.searchBar button{
+    width: 20%;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background: rgb(141, 241, 9)
+}
+
+.topContributors{
+    border: 0.5px solid peru;
+    float: left;
+    overflow: hidden;
+}
+.topContributors table{
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+.topContributors td{
+    border: 2px solid peru;
+    padding: 2%;
+}
+
+
+.allRepos h2{
+    text-align: center;
+}
+
+.allRepos table{
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.allRepos th,
+.allRepos td{
+    width: 25%;
+    padding: 2%;
+    border: 2px solid rgb(245, 217, 95);
+    text-align: center;
+}
+
+.allRepos tr td:first-of-type{
+    text-align: left;
+}

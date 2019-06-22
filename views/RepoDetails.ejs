@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+
+<link rel="stylesheet" href="/css/RepoDetails.css">
+
+<div class="overview">
+    <h2>Repo Name: <%= repoName %></h2>
+    <h2>Total number of commits: <%= details.length %></h2>
+</div>
+
+<div class="container">
+    <h2>Commit History</h2>
+    <table>
+
+        <tr>
+            <th>Author</th>
+            <th>Date / Time(IST)</th>
+            <th>Additions / Deletions</th>
+        </tr>
+
+        <% details.forEach((repo) => { %>
+            <tr>
+                <td><%= repo.node.author.name %></th>
+                <td><%= repo.node.author.date.substring(0,10) %> / <%= repo.node.author.date.substring(11,19) %></th>
+                <td ><%= repo.node.additions %> / <%= repo.node.deletions %></th>
+            </tr>
+        <% }) %>
+    </table>
+</div>
+
+<% include ./partials/footer %>

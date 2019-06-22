@@ -1,0 +1,22 @@
+h2{
+    text-align: center;
+}
+
+.container{
+    margin-top: 3%;
+}
+
+table{
+    width: 60%;
+    margin: 1% auto;
+    border-collapse: collapse;
+}
+
+td,th{
+    border: 1px solid red;
+    padding: 1%;
+    width: 33%;
+}
+td{
+    text-align: center;
+}

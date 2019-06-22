@@ -1,0 +1,84 @@
+<% include ./partials/header %>
+<link rel="stylesheet" href="/css/home.css">
+<div class="container">
+    <div class="topRepos">
+        <h2> Top Repositories</h2>
+        <table>
+            <tr>
+                <th >Repository</th>
+                <th>Author</th>
+            </tr>
+
+            <% topRepos.forEach((repo) => { %>
+                <tr>
+                    <td ><%= repo[0] %></th>
+                    <td ><%= repo[1] %></th>
+                </tr>
+            <% }) %>
+
+        </table>       
+    </div>
+    
+    <div class="searchBar">
+        <form action="/home/search/repo" method="post">
+            <div class="formContents">
+                <input type="text" name="repoName" placeholder="Search by Repo Name">
+                <button>Search</button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="topContributors" style="text-align: center">
+        <h2>Top Contributors</h2>
+
+        <table>
+            <% topContributors.forEach((contributor) => { %>
+                <tr>
+                    <td><%= contributor[0] %></td>
+                </tr> 
+            <% }) %>
+        </table>
+       
+    </div>
+</div>
+
+
+<div class="allRepos">
+    <h2>All Repositories</h2>
+    <table>
+        <tr>
+            <th>Repository Name</th>
+            <th>Last Commit On(Time in IST)</th>
+            <th>Last Commit By</th>
+            <th>Details</th>
+        </tr>
+
+        <% allRepos.forEach(function(repo){ %>
+            <tr>
+                <td><%= repo.name %></td>
+                <% if(repo.ref){ %>
+                    <% if(repo.ref.target.history.edges.length > 0){ %>
+                        <td>
+                            <%= repo.ref.target.history.edges[0].node.author.date.substring(0,10) %> / 
+                            <%= repo.ref.target.history.edges[0].node.author.date.substring(11,19) %>
+                        </td>
+                        <td><%= repo.ref.target.history.edges[0].node.author.name %></td>
+                        <td><a href="/home/search/repo/<%= repo.name %>">Details...</a></td>
+                    <% }else{ %>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                    <% } %>
+                <% } else{ %>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                <% } %>
+                
+            </tr>
+        <% }) %>
+
+    </table>
+</div>
+
+<% include ./partials/footer %>
